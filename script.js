@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
     let hasError = false;
 
     inputs.forEach(input => {
-        let errorMessage = input.nextElementSibling;
+        const errorMessage = input.nextElementSibling;
         const inputValue = input.value;
 
         // 🧪 Checking whether fields are empty or not
@@ -103,7 +103,7 @@ form.addEventListener("submit", (e) => {
 // 🧹 Hide error message when user click in input field
 inputs.forEach(input => {
     input.addEventListener("focus", () => {
-        let errorMessage = input.nextElementSibling;
+        const errorMessage = input.nextElementSibling;
         errorMessage.classList.add("hide");
     })
 })
