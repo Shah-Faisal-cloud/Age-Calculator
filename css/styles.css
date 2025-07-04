@@ -1,0 +1,119 @@
+body .age-calculator .value,
+body .age-calculator .unit {
+  font-weight: 800;
+  font-style: italic;
+}
+
+body .age-calculator .input-group .input-wrapper .input, body .age-calculator .input-group .input-wrapper .label {
+  font-weight: 700;
+  font-style: normal;
+  color: hsl(0, 1%, 46%);
+  text-transform: uppercase;
+}
+
+body .age-calculator .input-group .input-wrapper .error-message {
+  font-weight: 400;
+  font-style: italic;
+  color: hsl(0, 100%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 94%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+}
+body .age-calculator {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  background-color: hsl(0, 100%, 100%);
+  width: clamp(300px, 50%, 600px);
+  padding: clamp(1.25rem, 3vw, 3rem);
+  border-radius: 1.5rem 1.5rem 10vw 1.5rem;
+}
+body .age-calculator .input-group {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  padding-bottom: 2rem;
+}
+body .age-calculator .input-group .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+body .age-calculator .input-group .input-wrapper .label {
+  font-size: clamp(8px, 2vw, 12px);
+  letter-spacing: 3px;
+}
+body .age-calculator .input-group .input-wrapper .input {
+  width: clamp(4rem, 12vw, 8rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(14px, 2vw, 18px);
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 4px;
+}
+body .age-calculator .input-group .input-wrapper .input[type=number]::-webkit-outer-spin-button, body .age-calculator .input-group .input-wrapper .input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+body .age-calculator .input-group .input-wrapper .input:focus {
+  border-color: hsl(259, 100%, 65%);
+}
+body .age-calculator .input-group .input-wrapper .error-message {
+  font-size: clamp(10px, 1vw, 14px);
+  margin-bottom: 0.5rem;
+}
+body .age-calculator .input-group .input-wrapper .hide {
+  visibility: hidden;
+}
+body .age-calculator .separator {
+  position: relative;
+  height: 1px;
+  border-bottom: 1px solid hsl(0, 0%, 86%);
+}
+body .age-calculator .submit-btn {
+  background-color: hsl(259, 100%, 65%);
+  color: hsl(0, 100%, 100%);
+  border-radius: 50%;
+  border: none;
+  padding: 0.75rem;
+  position: absolute;
+  right: 0;
+  left: auto;
+  transform: translateY(-50%);
+}
+body .age-calculator .submit-btn:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 0%);
+  transition: background-color 0.25s ease-in;
+}
+body .age-calculator .submit-btn .arrow-icon {
+  width: clamp(1.5rem, 4vw, 3rem);
+}
+@media (max-width: 950px) {
+  body .age-calculator .submit-btn {
+    transform: translate(50%, -50%);
+    right: 50%;
+  }
+}
+body .age-calculator .value,
+body .age-calculator .unit {
+  font-size: clamp(2rem, 8vw, 5rem);
+}
+body .age-calculator .value {
+  color: hsl(259, 100%, 65%);
+  margin-right: clamp(0.5rem, 1.5vw, 1rem);
+}/*# sourceMappingURL=styles.css.map */

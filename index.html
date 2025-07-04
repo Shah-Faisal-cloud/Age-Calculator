@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body>
+  <main class="age-calculator">
+    <form action="javascript:void(0)" class="form">
+      <div class="input-group">
+        <div class="input-wrapper">
+          <label for="day" class="label">Day</label>
+          <input type="number" id="day" class="input" placeholder="DD">
+          <span class="error-message hide">This field is required</span>
+        </div>
+        <div class="input-wrapper">
+          <label for="month" class="label">Month</label>
+          <input type="number" id="month" class="input" placeholder="MM">
+          <span class="error-message hide">This field is required</span>
+        </div>
+        <div class="input-wrapper">
+          <label for="year" class="label">Year</label>
+          <input type="number" id="year" class="input" placeholder="YYYY">
+          <span class="error-message hide">This field is required</span>
+        </div>
+      </div>
+      <div class="separator">
+        <button type="submit" class="submit-btn">
+          <img src="assets/images/icon-arrow.svg" alt="arrow-icon" class="arrow-icon">
+        </button>
+      </div>
+
+    </form>
+    <section class="output">
+      <p class="result-wrapper">
+        <span class="value year-value">--</span>
+        <span class="unit">years</span>
+      </p>
+      <p class="result-wrapper">
+        <span class="value month-value">--</span>
+        <span class="unit">months</span>
+      </p>
+      <p class="result-wrapper">
+        <span class="value day-value">--</span>
+        <span class="unit">days</span>
+      </p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

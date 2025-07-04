@@ -1,0 +1,154 @@
+// variables for colors
+
+$purple: hsl(259, 100%, 65%);
+$red: hsl(0, 100%, 67%);
+$white: hsl(0, 100%, 100%);
+$black: hsl(0, 0%, 0%);
+$grey-light: hsl(0, 0%, 94%);
+$grey-medium: hsl(0, 0%, 86%);
+$grey-dark: hsl(0, 1%, 46%);
+
+// placeholders for typography
+
+%text-heavy-italic {
+    font-weight: 800;
+    font-style: italic;
+}
+
+%text-bold-normal {
+    font-weight: 700;
+    font-style: normal;
+    color: $grey-dark;
+    text-transform: uppercase;
+}
+
+%text-regular-normal {
+    font-weight: 400;
+    font-style: italic;
+    color: $red;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $grey-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+
+
+    .age-calculator {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        background-color: $white;
+        width: clamp(300px, 50%, 600px);
+        padding: clamp(1.25rem, 3vw, 3rem);
+        border-radius: 1.5rem 1.5rem 10vw 1.5rem;
+
+        .input-group {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1rem;
+            padding-bottom: 2rem;
+
+            .input-wrapper {
+                display: flex;
+                flex-direction: column;
+                row-gap: 0.25rem;
+
+                .label {
+                    font-size: clamp(8px, 2vw, 12px);
+                    letter-spacing: 3px;
+                    @extend %text-bold-normal;
+                }
+
+                .input {
+                    width: clamp(4rem, 12vw, 8rem);
+                    padding: clamp(0.5rem, 2vw, 1rem);
+                    font-size: clamp(14px, 2vw, 18px);
+                    border: 1px solid $grey-medium;
+                    border-radius: 4px;
+                    @extend %text-bold-normal;
+
+                    &[type="number"] {
+
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            appearance: none;
+                            margin: 0;
+                        }
+                    }
+
+                    &:focus {
+                        border-color: $purple;
+                    }
+                }
+
+                .error-message {
+                    @extend %text-regular-normal;
+                    font-size: clamp(10px, 1vw, 14px);
+                    margin-bottom: 0.5rem;
+                }
+
+                .hide {
+                    visibility: hidden;
+                }
+
+            }
+
+        }
+
+        .separator {
+            position: relative;
+            height: 1px;
+            border-bottom: 1px solid $grey-medium;
+        }
+
+        .submit-btn {
+            background-color: $purple;
+            color: $white;
+            border-radius: 50%;
+            border: none;
+            padding: 0.75rem;
+            position: absolute;
+            right: 0;
+            left: auto;
+            transform: translateY(-50%);
+
+            &:hover {
+                cursor: pointer;
+                background-color: $black;
+                transition: background-color 0.25s ease-in;
+            }
+
+            .arrow-icon {
+                width: clamp(1.5rem, 4vw, 3rem);
+            }
+
+            @media (max-width: 950px) {
+                transform: translate(50%, -50%);
+                right: 50%;
+            }
+        }
+
+        .value,
+        .unit {
+            @extend %text-heavy-italic;
+            font-size: clamp(2rem, 8vw, 5rem);
+        }
+
+        .value {
+            color: $purple;
+            margin-right: clamp(0.5rem, 1.5vw, 1rem);
+        }
+    }
+}
