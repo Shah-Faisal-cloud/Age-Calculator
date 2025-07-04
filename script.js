@@ -107,3 +107,20 @@ inputs.forEach(input => {
         errorMessage.classList.add("hide");
     })
 })
+
+
+// 🚫 Limit user input length per field by blocking extra key presses when max digits reached (allows editing keys and text replacement)
+inputs.forEach(input => {
+  const maxLengths = { day: 2, month: 2, year: 4 };
+
+  input.addEventListener('keydown', e => {
+    const max = maxLengths[input.id];
+
+    const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+    
+    if (allowedKeys.includes(e.key)) return;
+    if (input.value.length >= max && input.selectionStart === input.selectionEnd) {
+      e.preventDefault();
+    }
+  });
+});

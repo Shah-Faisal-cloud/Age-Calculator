@@ -130,6 +130,10 @@ body {
                 transition: background-color 0.25s ease-in;
             }
 
+            &:focus{
+                background-color: $black;
+            }
+
             .arrow-icon {
                 width: clamp(1.5rem, 4vw, 3rem);
             }
