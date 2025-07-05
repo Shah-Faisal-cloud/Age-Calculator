@@ -31,6 +31,7 @@ form.addEventListener("submit", (e) => {
         if (inputValue === "") {
             errorMessage.classList.remove("hide");
             hasError = true;
+            return;
         } else {
             errorMessage.classList.add("hide");
         };
@@ -51,8 +52,13 @@ form.addEventListener("submit", (e) => {
         }
 
         // 🧪 Year validation
-        if (input === yearInput && (inputValue.length !== 4 || year < 1947 || year > new Date().getFullYear())) {
+        if (input === yearInput && (inputValue.length !== 4 || year < 1947)) {
             errorMessage.textContent = "You weren't born before Pakistan 😅";
+            errorMessage.classList.remove("hide");
+            hasError = true;
+        }
+        if (input === yearInput && new Date(year, month - 1, day) > new Date()){
+            errorMessage.textContent = "Nice try, but this ain’t a sci-fi movie. 🛸";
             errorMessage.classList.remove("hide");
             hasError = true;
         }
